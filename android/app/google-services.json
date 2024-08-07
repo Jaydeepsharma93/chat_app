@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "761736797362",
+    "project_id": "chat-cfbb8",
+    "storage_bucket": "chat-cfbb8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:761736797362:android:426bba2e03a738a7b57dab",
+        "android_client_info": {
+          "package_name": "com.example.c"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWqPPOHxkSmp_gsSGI__iWcseOiGsbKus"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:761736797362:android:e03aa56910f815aeb57dab",
+        "android_client_info": {
+          "package_name": "com.example.chat_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWqPPOHxkSmp_gsSGI__iWcseOiGsbKus"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
