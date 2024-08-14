@@ -1,11 +1,15 @@
-import 'package:chat_app/helper/auth_services.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
-class AuthPage extends StatelessWidget {
-  const AuthPage({super.key});
+import '../Controller/controllers.dart';
+
+class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    LoginController loginController = Get.find();
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -34,6 +38,7 @@ class AuthPage extends StatelessWidget {
                   ),
                   SizedBox(height: height * 0.06),
                   TextField(
+                    controller: loginController.txtEmail,
                     textInputAction: TextInputAction.next,
                     decoration: InputDecoration(
                       labelText: 'Username or email',
@@ -54,13 +59,10 @@ class AuthPage extends StatelessWidget {
                   ),
                   SizedBox(height: height * 0.02),
                   TextField(
+                    controller: loginController.txtPwd,
                     textInputAction: TextInputAction.done,
                     decoration: InputDecoration(
                       labelText: 'Password',
-                      suffixIcon: IconButton(
-                        icon: Icon(Icons.remove_red_eye_outlined),
-                        onPressed: () {},
-                      ),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20),
                           borderSide: BorderSide(
@@ -205,13 +207,18 @@ class AuthPage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        "Don't have an account? sign up",
-                        style: TextStyle(
-                            color: Color(0xff1f2147),
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            decoration: TextDecoration.underline),
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).pushNamed('/sign_up');
+                        },
+                        child: Text(
+                          "Don't have an account? sign up",
+                          style: TextStyle(
+                              color: Color(0xff1f2147),
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              decoration: TextDecoration.underline),
+                        ),
                       )
                     ],
                   )
@@ -224,5 +231,3 @@ class AuthPage extends StatelessWidget {
     );
   }
 }
-
-FirebaseAuthServices firebaseAuthServices = FirebaseAuthServices();
